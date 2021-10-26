@@ -9,8 +9,12 @@
 
 ## Pré-Condição para a execução do Projeto:
 
-* Ferrmenta Postman instalada 
+* Ferramenta Postman instalada 
 * Importar as collections no Postman 
+
+## Pós-Condição para a execução do Projeto:
+
+*  send nas request
 
 
 
