@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "77d5383a-3e8b-4ec7-9062-406132edb8b2",
+		"name": "Webmotors_Automacao_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar Marcas",
+			"item": [
+				{
+					"name": "/api/OnlineChallenge/Make",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"} catch (err) {\r",
+									"    console.log(err);\r",
+									"    console.log(responseBody);\r",
+									"    return;\r",
+									"}\r",
+									"\r",
+									"/** Schema**/\r",
+									"const schema = {\r",
+									"    \"schema\": \"string\"\r",
+									"};\r",
+									"\r",
+									"/** Header **/\r",
+									"pm.test(`${pm.response.code} Status Code`, () => pm.response.to.have.status(200));\r",
+									"pm.test(`Status code name: ${pm.response.status}`, () => pm.response.to.have.status('OK'));\r",
+									"pm.test(`Content-Type: ${pm.response.headers.get('Content-Type')}`, () => pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8'));\r",
+									"\r",
+									"/** Body **/\r",
+									"pm.test(\"Validar Schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/OnlineChallenge/Make",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"OnlineChallenge",
+								"Make"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultar Modelos",
+			"item": [
+				{
+					"name": "/api/OnlineChallenge/Model",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"} catch (err) {\r",
+									"    console.log(err);\r",
+									"    console.log(responseBody);\r",
+									"    return;\r",
+									"}\r",
+									"\r",
+									"/** Schema**/\r",
+									"const schema = {\r",
+									"    \"schema\": \"string\"\r",
+									"};\r",
+									"\r",
+									"/** Header **/\r",
+									"pm.test(`${pm.response.code} Status Code`, () => pm.response.to.have.status(200));\r",
+									"pm.test(`Status code name: ${pm.response.status}`, () => pm.response.to.have.status('OK'));\r",
+									"pm.test(`Content-Type: ${pm.response.headers.get('Content-Type')}`, () => pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8'));\r",
+									"\r",
+									"/** Body **/\r",
+									"pm.test(\"Validar Schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/OnlineChallenge/Model?MakeID={{honda}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"OnlineChallenge",
+								"Model"
+							],
+							"query": [
+								{
+									"key": "MakeID",
+									"value": "{{honda}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultar Versões",
+			"item": [
+				{
+					"name": "/api/OnlineChallenge/api/OnlineChallenge/Version",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"} catch (err) {\r",
+									"    console.log(err);\r",
+									"    console.log(responseBody);\r",
+									"    return;\r",
+									"}\r",
+									"\r",
+									"/** Schema**/\r",
+									"const schema = {\r",
+									"    \"schema\": \"string\"\r",
+									"};\r",
+									"\r",
+									"/** Header **/\r",
+									"pm.test(`${pm.response.code} Status Code`, () => pm.response.to.have.status(200));\r",
+									"pm.test(`Status code name: ${pm.response.status}`, () => pm.response.to.have.status('OK'));\r",
+									"pm.test(`Content-Type: ${pm.response.headers.get('Content-Type')}`, () => pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8'));\r",
+									"\r",
+									"/** Body **/\r",
+									"pm.test(\"Validar Schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/OnlineChallenge/Version/?ModelID={{idCity}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"OnlineChallenge",
+								"Version",
+								""
+							],
+							"query": [
+								{
+									"key": "ModelID",
+									"value": "{{idCity}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultar Veículos",
+			"item": [
+				{
+					"name": "/api/OnlineChallenge/Vehicles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"try {\r",
+									"    var jsonData = pm.response.json();\r",
+									"} catch (err) {\r",
+									"    console.log(err);\r",
+									"    console.log(responseBody);\r",
+									"    return;\r",
+									"}\r",
+									"\r",
+									"/** Schema**/\r",
+									"const schema = {\r",
+									"    \"schema\": \"string\"\r",
+									"};\r",
+									"\r",
+									"/** Header **/\r",
+									"pm.test(`${pm.response.code} Status Code`, () => pm.response.to.have.status(200));\r",
+									"pm.test(`Status code name: ${pm.response.status}`, () => pm.response.to.have.status('OK'));\r",
+									"pm.test(`Content-Type: ${pm.response.headers.get('Content-Type')}`, () => pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8'));\r",
+									"\r",
+									"/** Body **/\r",
+									"pm.test(\"Validar Schema\", () => {\r",
+									"    pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/OnlineChallenge/Vehicles?Page={{pagina}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"OnlineChallenge",
+								"Vehicles"
+							],
+							"query": [
+								{
+									"key": "Page",
+									"value": "{{pagina}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
